@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
+
+:root{
+  /* ── LIGHT BACKGROUNDS ── */
+  --w0:#FFFFFF;
+  --w1:#FAFAF8;
+  --w2:#F5F3EF;
+  --w3:#EDE9E2;
+  --w4:#E4DED5;
+
+  /* ── DARK / CONTRAST ── */
+  --d0:#0F0E0C;
+  --d1:#181614;
+  --d2:#222018;
+  --d3:#2C2A22;
+
+  /* ── AMBER ACCENT ── */
+  --a0:#A87020;
+  --a1:#C8902A;
+  --a2:#E0B050;
+  --a3:#F0CC78;
+
+  /* ── FELT ACCENT ── */
+  --f0:#7A1828;
+  --f1:#9A2035;
+
+  /* ── TEXT ── */
+  --tk:#0F0E0C;
+  --t1:#2C2A22;
+  --t2:#5A5648;
+  --t3:#8A8578;
+  --t4:#B8B4AC;
+
+  /* ── BORDERS ── */
+  --bd:rgba(15,14,12,.1);
+  --bd2:rgba(15,14,12,.18);
+  --bdd:rgba(255,255,255,.1);
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --easein:cubic-bezier(.7,0,.84,0);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--w1);
+  color:var(--tk);
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  cursor:none;
+}
+body.locked{overflow:hidden}
+img{display:block;max-width:100%;height:auto}
+button,a{font-family:inherit;cursor:none;text-decoration:none;color:inherit;background:none;border:none}
+::selection{background:var(--a1);color:#fff}
+*:focus-visible{outline:1px solid var(--a1);outline-offset:3px}
+
+/* grain helper */
+.grain::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+}
+
+@media(pointer:coarse){body{cursor:auto}button,a{cursor:pointer}}
